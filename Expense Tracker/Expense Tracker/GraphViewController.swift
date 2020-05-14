@@ -62,8 +62,14 @@ class GraphViewController: UIViewController {
                 }
             })
         }else{
-            minimumDate = Utility.dateFromString(dateStr: Utility.stringFromDate(date: Calendar.current.date(byAdding: .day, value: -1, to: Date(), wrappingComponents: false)!))
-            maximumDate = arrDates[0]
+            if arrDates[0].compare(Date()) == .orderedAscending{
+                minimumDate = arrDates[0]
+                maximumDate = Utility.dateFromString(dateStr: Utility.stringFromDate(date: Date()))
+            }
+            else if arrDates[0].compare(Date()) == .orderedSame{
+                minimumDate = Utility.dateFromString(dateStr: Utility.stringFromDate(date: Calendar.current.date(byAdding: .day, value: -1, to: Date(), wrappingComponents: false)!))
+                maximumDate = arrDates[0]
+            }
         }
         
     }
