@@ -112,7 +112,7 @@ class GraphViewController: UIViewController {
             self.lblDailyAvgExpense.text = String(format: "\(DailyAverageExpenseis) %.2f", dailyAvgExpense)
             weeklyAvgExpense = self.totalExpense / 4
             self.lblWeeklyAvgExpense.text = String(format: "\(WeeklyAverageExpenseis) %.2f", weeklyAvgExpense)
-            monthlyAvgExpense = self.totalExpense / 30
+            monthlyAvgExpense = self.totalExpense / 1
             self.lblMonthlyAvgExpense.text = String(format: "\(MonthlyAverageExpenseis) %.2f", monthlyAvgExpense)
         }
         
